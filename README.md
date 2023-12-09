@@ -21,7 +21,7 @@ Java'yı kurmak için aşağıdaki adımları takip edin:
 3. Java'nın başarılı bir şekilde kurulduğunu doğrulayın.
 
 ## `SatoshiTURK.jar` Dosyasını Çalıştırma
-1. Java başarıyla kurulduktan sonra, `SatoshiTURK.jar` dosyasının bulunduğu klasöre gidin.
+1. Java başarıyla kurulduktan sonra, `SatoshiTURK.jar` dosyasının bulunduğu klasöre gidin. (SatoshiTURK HD Wallet Klasörü)
 2. Dosyayı çift tıklayarak veya terminal üzerinden `java -jar SatoshiTURK.jar` komutu ile çalıştırın.
 
 ## Sorun Giderme
@@ -67,7 +67,7 @@ Follow these steps to install Java:
 3. Confirm that Java has been successfully installed.
 
 ## Running `SatoshiTURK.jar`
-1. Once Java is successfully installed, navigate to the folder containing the `SatoshiTURK.jar` file.
+1. Once Java is successfully installed, navigate to the folder containing the `SatoshiTURK.jar` file.  (SatoshiTURK HD Wallet Directory)
 2. Run the file by double-clicking it or through the terminal using the command `java -jar SatoshiTURK.jar`.
 
 ## Troubleshooting

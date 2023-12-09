@@ -42,7 +42,7 @@ Java'yı kurmak için aşağıdaki adımları takip edin:
 
 
 
-English
+# English
 
 # SatoshiTURK HD Wallet Installation Guide
 

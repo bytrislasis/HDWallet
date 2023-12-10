@@ -78,6 +78,7 @@ public class SatoshiTURK extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Internet connection detected! Please disconnect your internet connection for full security.");
         } else {
             bakiyeAktif.setEnabled(false);
+            generateButton.setEnabled(false);
         }
 
         jTabbedPane1.addChangeListener(new ChangeListener() {
@@ -215,7 +216,6 @@ public class SatoshiTURK extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("resources/tr"); // NOI18N
         setTitle(bundle.getString("app.title")); // NOI18N
-        setAlwaysOnTop(true);
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -614,13 +614,14 @@ public class SatoshiTURK extends javax.swing.JFrame {
                 .addComponent(jButton8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(themechange, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lchange, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(26, 26, 26))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -754,7 +755,6 @@ public class SatoshiTURK extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
         siteac("https://t.me/satoshiturk");
-
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -835,6 +835,10 @@ public class SatoshiTURK extends javax.swing.JFrame {
         jTabbedPane1.setTitleAt(2, bundle.getString("singsender"));
         jTabbedPane1.setTitleAt(3, bundle.getString("warning"));
         jTabbedPane1.setTitleAt(4, bundle.getString("about"));
+        
+        if(!isInternetAvailable()){
+            bakiyeAktif.setToolTipText(bundle.getString("bakiyeakttifnetyok"));
+        }
 
     }
 
@@ -941,6 +945,10 @@ public class SatoshiTURK extends javax.swing.JFrame {
                 try {
                     startIndex = Integer.parseInt(startInd.getText());
                     endIndex = Integer.parseInt(endInd.getText());
+                    
+                    if(startIndex > endIndex){
+                        startInd.setText("0");
+                    }
 
                     if (bakiyeAktif.isSelected()) {
                         // En fazla 25 adres kontrolü
@@ -1050,7 +1058,7 @@ public class SatoshiTURK extends javax.swing.JFrame {
     public boolean isInternetAvailable() {
         try {
             InetAddress address = InetAddress.getByName("google.com");
-            return address.isReachable(5000);  // 5000 milisaniye timeout
+            return address.isReachable(5000);   
         } catch (Exception e) {
             e.printStackTrace();
             return false;

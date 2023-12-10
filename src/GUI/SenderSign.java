@@ -52,7 +52,6 @@ public class SenderSign extends javax.swing.JFrame {
         signrpcurl = new javax.swing.JTextField();
 
         setTitle("SatoshiTURK HD Wallet");
-        setAlwaysOnTop(true);
         setResizable(false);
 
         signtext.setColumns(20);
@@ -166,11 +165,11 @@ public class SenderSign extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    public static javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea logtext;
-    private javax.swing.JTextField signrpcurl;
+    public static javax.swing.JTextField signrpcurl;
     public static javax.swing.JTextArea signtext;
     // End of variables declaration//GEN-END:variables
 }
